@@ -6,7 +6,7 @@ class Framework {
 
     const CONTROLLER_PATH = "\\Application\\Mvc\\Controller\\";
     const DS = DIRECTORY_SEPARATOR;
-    const ROOT_PATH = __DIR__.DS."..".DS."..".DS."..".DS."..".DS."..".DS
+    const ROOT_PATH = __DIR__.DS."..".DS."..".DS."..".DS;
 
     static protected $instance;
     static protected $utilities;
