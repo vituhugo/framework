@@ -1,0 +1,14 @@
+{
+  "name": "apis3/framework",
+  "type": "library",
+  "description": "Apis3 - Pilot Respect Framework",
+  "require": {
+    "php": ">=5.5"
+  },
+  "autoload": {
+    "classmap": [
+      "framework.php",
+      "utilities.php"
+    ]
+  }
+}
