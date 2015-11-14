@@ -1,5 +1,6 @@
 <?php
 
+use Framework\Utilities;
 use Framework\Controller\Router;
 
 class Framework {
@@ -17,7 +18,7 @@ class Framework {
 
     static public function autoload()
     {
-        $app_path_in_pieces = explode("\\", rtrim(CONTROLLER_PATH, "\\"));
+        $app_path_in_pieces = explode("\\", trim(self::CONTROLLER_PATH, "\\"));
         $classes_prefixo = array
         (
             'Controller' => '.controller.php',
@@ -49,7 +50,7 @@ class Framework {
         return self::$utilities;
     }
 
-    public function __callStatic($method, $param)
+    static public function __callStatic($method, $param)
     {
         switch($method)
         {
