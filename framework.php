@@ -6,6 +6,7 @@ class Framework {
 
     const CONTROLLER_PATH = "\\Application\\Mvc\\Controller\\";
     const DS = DIRECTORY_SEPARATOR;
+    const ROOT_PATH = __DIR__.DS."..".DS."..".DS."..".DS."..".DS."..".DS
 
     static protected $instance;
     static protected $utilities;
@@ -31,7 +32,7 @@ class Framework {
                     return;
 
                 $keys = explode("\\", $classname);
-                $path = __DIR__.DS."..".DS."..".DS."..".DS.str_replace('\\', DS, strtolower($classname)) . $classes_prefixo[$keys[2]];
+                $path = ROOT_PATH.str_replace('\\', DS, strtolower($classname)) . $classes_prefixo[$keys[2]];
 
                 if (file_exists($path))
                     require $path;
