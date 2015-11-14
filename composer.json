@@ -1,5 +1,5 @@
 {
-  "name": "apis3/respect/framework",
+  "name": "apis3-respect/framework",
   "type": "library",
   "description": "Apis3 - Pilot Respect Framework",
   "require": {
