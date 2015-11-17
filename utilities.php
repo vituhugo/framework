@@ -11,7 +11,7 @@ class Utilities
     const SEPARATOR_UNDERSCORE = "_";
     const SEPARATOR_URLFRIENDLY = "-";
 
-    public function formater($string, $format = self::FORMAT_CAMELCASE, $separador = self::SEPARATOR_URLFRIENDLY)
+	public function formater($string, $format = self::FORMAT_CAMELCASE, $separador = self::SEPARATOR_URLFRIENDLY)
     {
         if (false !== strstr($separador, self::SEPARATOR_CAMELCASE))
         {
