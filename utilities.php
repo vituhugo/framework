@@ -6,11 +6,14 @@ class Utilities
     const FORMAT_UNDERSCORE = "underscore";
     const FORMAT_CAMELCASE = "CamelCase";
     const FORMAT_CAMELCASE_2 = "camelCase";
-    const SEPARATOR_CAMELCASE = "|";
 
-    public function formater($string, $format = FORMAT_CAMELCASE, $separador = ['-','_'])
+    const SEPARATOR_CAMELCASE = "|";
+    const SEPARATOR_UNDERSCORE = "_";
+    const SEPARATOR_URLFRIENDLY = "-";
+
+    public function formater($string, $format = self::FORMAT_CAMELCASE, $separador = self::SEPARATOR_URLFRIENDLY)
     {
-        if (false !== strstr($separador, SEPARATOR_CAMELCASE))
+        if (false !== strstr($separador, self::SEPARATOR_CAMELCASE))
         {
             $name = strtolower(preg_replace('/([a-z])([A-Z])/', '$1|$2', $string));
         }
@@ -19,18 +22,19 @@ class Utilities
 
         switch ($format)
         {
-            case FORMAT_URL:
+            case self::FORMAT_URL:
                 return strtolower(implode("-", $string_pieces));
 
-            case FORMAT_UNDERSCORE:
+            case self::FORMAT_UNDERSCORE:
                 return strtolower(implode("_", $string_pieces));
 
-            case FORMAT_CAMELCASE:
+            case self::FORMAT_CAMELCASE:
                 return implode("", array_map('ucfirst', $string_pieces));
 
-            case FORMAT_CAMELCASE_2:
+            case self::FORMAT_CAMELCASE_2:
                 return lcfirst(implode("", array_map('ucfirst', $string_pieces)));
+            default:
+                return $string;
         }
-        throw new \Exception('Formato não existe');
     }
 }
