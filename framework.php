@@ -3,6 +3,12 @@
 use Framework\Utilities;
 use Framework\Controller\Router;
 
+if (!defined("DS"))
+    define ("DS", DIRECTORY_SEPARATOR);
+
+if (!defined("ROOT_PATH"))
+    define("ROOT_PATH", __DIR__.DS."..".DS."..".DS."..".DS);
+    
 class Framework {
 
     const CONTROLLER_PATH = "\\Application\\Mvc\\Controller\\";
@@ -13,7 +19,7 @@ class Framework {
     static protected $utilities;
 
     public function __construct() {
-        throw new \Exception("Framework È uma classe est·tica. N„o pode ser instanciada");
+        throw new \Exception("Framework √© uma classe est√°tica. N√£o pode ser instanciada");
     }
 
     static public function autoload()
